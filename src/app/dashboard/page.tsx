@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 
 export default function DashboardPage() {
-  const [qrs, setQrs] = useState<any[]>([])
+  const [qrs, setQrs] = useState<{ id: string, original_url: string, short_code: string, created_at: string }[]>([])
 
   useEffect(() => {
     const fetchQrs = async () => {
