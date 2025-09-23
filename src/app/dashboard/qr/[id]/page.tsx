@@ -104,9 +104,9 @@ export default function Page({ params }: { params: { id: string } }) {
         />
 
         <div className="bg-white p-6 rounded-xl shadow w-full md:w-2/3">
-          <h2 className="text-2xl font-semibold mb-4">Scan Analytics</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">Scan Analytics</h2>
           {scans.length === 0 ? (
-            <p>No scans yet.</p>
+            <p className="text-gray-800">No scans yet.</p>
           ) : (
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={formattedChartData}>
@@ -139,7 +139,7 @@ export default function Page({ params }: { params: { id: string } }) {
         className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
         onClick={() => router.push("/dashboard")}
       >
-        Back to Dashboard
+        <span className="text-gray-800">Back to Dashboard</span>
       </button>
     </div>
   )

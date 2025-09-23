@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
-import { QRCodeSVG } from "qrcode.react"
 import QrCard from "@/components/QrCard"
 
 interface QRCodeData {
@@ -16,7 +15,9 @@ interface QRCodeData {
 export default function DashboardPage() {
   const router = useRouter()
   const [qrCodes, setQrCodes] = useState<QRCodeData[]>([])
+  const [filteredQrCodes, setFilteredQrCodes] = useState<QRCodeData[]>([])
   const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     const fetchQRCodes = async () => {
@@ -30,6 +31,7 @@ export default function DashboardPage() {
         console.error(error)
       } else {
         setQrCodes(data || [])
+        setFilteredQrCodes(data || [])
       }
       setLoading(false)
     }
@@ -37,7 +39,19 @@ export default function DashboardPage() {
     fetchQRCodes()
   }, [])
 
+  // Filter QR codes by URL
+  useEffect(() => {
+    if (!search.trim()) setFilteredQrCodes(qrCodes)
+    else {
+      const filtered = qrCodes.filter((qr) =>
+        qr.original_url.toLowerCase().includes(search.toLowerCase())
+      )
+      setFilteredQrCodes(filtered)
+    }
+  }, [search, qrCodes])
+
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { data: { user } } = await supabase.auth.getUser()
     const file = event.target.files?.[0]
     if (!file) return
 
@@ -53,9 +67,14 @@ export default function DashboardPage() {
     for (const url of lines) {
       const shortCode = Math.random().toString(36).substring(2, 8) // generate shortcode
       const { error } = await supabase.from("qr_codes").insert([
-        { original_url: url, short_code: shortCode }
+        { 
+          original_url: url, 
+          short_code: shortCode,
+          user_id: user?.id
+        }
       ])
       if (!error) createdCount++
+      else alert(error.message)
     }
 
     alert(`✅ Created ${createdCount} new QR codes from file`)
@@ -68,6 +87,18 @@ export default function DashboardPage() {
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
 
+      {/* Search Input */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search by URL..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="border rounded p-2 w-full md:w-1/3"
+        />
+      </div>
+
+      {/* Action Buttons */}
       <div className="flex gap-4 mb-6">
         <button
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
@@ -88,11 +119,11 @@ export default function DashboardPage() {
         </label>
       </div>
 
-      {qrCodes.length === 0 ? (
+      {filteredQrCodes.length === 0 ? (
         <p>No QR codes created yet.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {qrCodes.map((qr) => (
+          {filteredQrCodes.map((qr) => (
             <QrCard
               key={qr.id}
               id={qr.id}
