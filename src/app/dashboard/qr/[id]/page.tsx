@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 import { QRCodeSVG } from "qrcode.react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import QrDetail from "@/components/QrDetail"
 
 interface QRScan {
   scanned_at: string
@@ -20,11 +21,11 @@ interface QRCodeData {
 }
 
 export default function Page({ params }: { params: { id: string } }) {
-  const { id } = params
   const router = useRouter()
   const [qr, setQr] = useState<QRCodeData | null>(null)
   const [scans, setScans] = useState<QRScan[]>([])
   const [loading, setLoading] = useState(true)
+  const [newUrl, setNewUrl] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +35,7 @@ export default function Page({ params }: { params: { id: string } }) {
       const { data: qrData, error: qrError } = await supabase
         .from("qr_codes")
         .select("*")
-        .eq("id", id)
+        .eq("id", params.id)
         .single()
 
       if (qrError || !qrData) {
@@ -44,12 +45,13 @@ export default function Page({ params }: { params: { id: string } }) {
       }
 
       setQr(qrData)
+      setNewUrl(qrData.original_url)
 
       // Fetch scan info
       const { data: scanData } = await supabase
         .from("qr_scans")
         .select("*")
-        .eq("qr_id", id)
+        .eq("qr_id", params.id)
         .order("scanned_at", { ascending: true })
 
       setScans(scanData || [])
@@ -57,7 +59,7 @@ export default function Page({ params }: { params: { id: string } }) {
     }
 
     fetchData()
-  }, [  id, router])
+  }, [params.id, router])
 
   // Prepare chart data: counts per day
   const chartData = scans.reduce<Record<string, number>>((acc, scan) => {
@@ -68,6 +70,25 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const formattedChartData = Object.entries(chartData).map(([date, count]) => ({ date, count }))
 
+  // const handleUpdateUrl = async () => {
+  //   if (!newUrl.trim()) {
+  //     alert("URL cannot be empty")
+  //     return
+  //   }
+
+  //   const { error } = await supabase
+  //     .from("qr_codes")
+  //     .update({ original_url: newUrl })
+  //     .eq("id", params.id)
+
+  //   if (error) {
+  //     alert("Error updating URL: " + error.message)
+  //   } else {
+  //     alert("URL updated successfully")
+  //     if (qr) setQr({ ...qr, original_url: newUrl })
+  //   }
+  // }
+
   if (loading) return <p className="p-6">Loading...</p>
 
   return (
@@ -75,12 +96,12 @@ export default function Page({ params }: { params: { id: string } }) {
       <h1 className="text-3xl font-bold mb-4">QR Code Details</h1>
 
       <div className="flex flex-col md:flex-row items-start gap-6 mb-8">
-        <div className="bg-white p-6 rounded-xl shadow w-full md:w-1/3 text-center">
-          <QRCodeSVG value={`www.localhost:3000/qr/${qr?.short_code}`} size={200} />
-          <p className="mt-4 font-semibold">{qr?.original_url}</p>
-          <p className="text-sm text-gray-500">Shortcode: {qr?.short_code}</p>
-          <p className="text-sm text-gray-500">Created at: {new Date(qr?.created_at || "").toLocaleString()}</p>
-        </div>
+        <QrDetail
+          id={qr?.id || ""}
+          original_url={qr?.original_url || ""}
+          short_code={qr?.short_code || ""}
+          created_at={qr?.created_at || ""}
+        />
 
         <div className="bg-white p-6 rounded-xl shadow w-full md:w-2/3">
           <h2 className="text-2xl font-semibold mb-4">Scan Analytics</h2>

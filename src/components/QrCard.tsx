@@ -1,0 +1,29 @@
+"use client"
+
+import { useRouter } from "next/navigation"
+import { QRCodeSVG } from "qrcode.react"
+
+interface QrCardProps {
+  id: string
+  original_url: string
+  short_code: string
+  created_at: string
+}
+
+export default function QrCard({ id, original_url, short_code, created_at }: QrCardProps) {
+  const router = useRouter()
+
+  return (
+    <div
+      className="bg-white p-4 rounded-xl shadow hover:shadow-lg cursor-pointer"
+      onClick={() => router.push(`/dashboard/qr/${id}`)}
+    >
+      <QRCodeSVG value={original_url} size={120} />
+      <p className="mt-2 font-semibold break-all">{original_url}</p>
+      <p className="text-sm text-gray-500">Shortcode: {short_code}</p>
+      <p className="text-sm text-gray-500">
+        Created: {new Date(created_at).toLocaleString()}
+      </p>
+    </div>
+  )
+}
