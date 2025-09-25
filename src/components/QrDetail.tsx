@@ -12,6 +12,8 @@ interface QrDetailProps {
   created_at: string
 }
 
+const HOSTNAME = "https://qr-saas-git-develop-davher890s-projects.vercel.app"
+
 export default function QrDetail({ id, original_url, short_code, created_at }: QrDetailProps) {
   const router = useRouter()
   const [url, setUrl] = useState(original_url)
@@ -56,7 +58,7 @@ export default function QrDetail({ id, original_url, short_code, created_at }: Q
 
   return (
     <div className="bg-white p-6 rounded-xl shadow w-full md:w-1/3 text-center">
-      <QRCodeCanvas value={url || ""} size={200} />
+      <QRCodeCanvas value={HOSTNAME + "/qr/" + short_code} size={200} />
       <p className="mt-4 font-semibold break-all text-gray-800">{url}</p>
       <p className="text-sm text-gray-500">Shortcode: {short_code}</p>
       <p className="text-sm text-gray-500">Created at: {new Date(created_at || "").toLocaleString()}</p>
