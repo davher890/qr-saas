@@ -70,23 +70,23 @@ export default function AccountPage() {
       <div className="bg-white p-6 rounded-xl shadow space-y-6">
         {/* Email (read-only) */}
         <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
+          <label className="block text-sm font-medium mb-1 text-gray-800">Email</label>
           <input
             type="email"
             value={email}
             disabled
-            className="w-full border rounded p-2 bg-gray-100"
+            className="w-full border rounded p-2 bg-gray-100 text-gray-800"
           />
         </div>
 
         {/* Username */}
         <div>
-          <label className="block text-sm font-medium mb-1">Username</label>
+          <label className="block text-sm font-medium mb-1 text-gray-800">Username</label>
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full border rounded p-2"
+            className="w-full border rounded p-2 text-gray-800"
           />
         </div>
         <button
@@ -100,12 +100,12 @@ export default function AccountPage() {
 
         {/* Change Password */}
         <div>
-          <label className="block text-sm font-medium mb-1">New Password</label>
+          <label className="block text-sm font-medium mb-1 text-gray-800">New Password</label>
           <input
             type="password"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
-            className="w-full border rounded p-2"
+            className="w-full border rounded p-2 text-gray-800"
           />
         </div>
         <button

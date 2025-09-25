@@ -39,7 +39,6 @@ export default function DashboardPage() {
     fetchQRCodes()
   }, [])
 
-  // Filter QR codes by URL
   useEffect(() => {
     if (!search.trim()) setFilteredQrCodes(qrCodes)
     else {
@@ -65,7 +64,7 @@ export default function DashboardPage() {
 
     let createdCount = 0
     for (const url of lines) {
-      const shortCode = Math.random().toString(36).substring(2, 8) // generate shortcode
+      const shortCode = Math.random().toString(36).substring(2, 8)
       const { error } = await supabase.from("qr_codes").insert([
         { 
           original_url: url, 
@@ -84,9 +83,7 @@ export default function DashboardPage() {
   if (loading) return <p className="p-6">Loading...</p>
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
-
+    <>
       {/* Search Input */}
       <div className="mb-4">
         <input
@@ -107,7 +104,6 @@ export default function DashboardPage() {
           Create New QR
         </button>
 
-        {/* Upload button */}
         <label className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 cursor-pointer">
           Upload File
           <input
@@ -134,6 +130,6 @@ export default function DashboardPage() {
           ))}
         </div>
       )}
-    </div>
+    </>
   )
 }
