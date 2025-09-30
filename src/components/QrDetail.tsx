@@ -15,8 +15,6 @@ interface QrDetailProps {
   size: number
 }
 
-const HOSTNAME = "https://qr-saas-git-develop-davher890s-projects.vercel.app"
-
 export default function QrDetail({ id, original_url, short_code, fg_color, bg_color, size, created_at }: QrDetailProps) {
   const router = useRouter()
 
@@ -34,13 +32,13 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
     if (id) {
       const { error } = await supabase
         .from("qr_codes")
-        .update({ 
-          original_url: url, 
-          fg_color: fgColorState, 
-          bg_color: bgColorState, 
-          size: sizeState 
-          })
-          .eq("id", id)
+        .update({
+          original_url: url,
+          fg_color: fgColorState,
+          bg_color: bgColorState,
+          size: sizeState
+        })
+        .eq("id", id)
       setSaving(false)
 
       if (error) {
@@ -51,13 +49,13 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
       }
     } else {
       const { data: { user } } = await supabase.auth.getUser()
-      const { error } = await supabase.from("qr_codes").insert({ 
-        original_url: url, 
+      const { error } = await supabase.from("qr_codes").insert({
+        original_url: url,
         short_code: short_code,
         user_id: user?.id,
-        fg_color: fgColorState, 
-        bg_color: bgColorState, 
-        size: sizeState 
+        fg_color: fgColorState,
+        bg_color: bgColorState,
+        size: sizeState
       })
       setSaving(false)
 
@@ -91,8 +89,8 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
 
   return (
     <div className="bg-white p-6 rounded-xl shadow w-full md:w-1/3 text-center">
-      <QRCodeCanvas 
-        value={HOSTNAME + "/qr/" + short_code}
+      <QRCodeCanvas
+        value={process.env.APP_HOSTNAME + "/qr/" + short_code}
         size={sizeState}
         fgColor={fgColorState}
         bgColor={bgColorState}
