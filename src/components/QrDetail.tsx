@@ -86,11 +86,11 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
       router.push("/dashboard") // Go back to dashboard
     }
   }
-
+  
   return (
     <div className="bg-white p-6 rounded-xl shadow w-full md:w-1/3 text-center">
       <QRCodeCanvas
-        value={process.env.APP_HOSTNAME + "/qr/" + short_code}
+        value={process.env.NEXT_PUBLIC_APP_HOSTNAME + "/qr/" + short_code}
         size={sizeState}
         fgColor={fgColorState}
         bgColor={bgColorState}

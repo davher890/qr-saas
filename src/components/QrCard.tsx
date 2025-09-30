@@ -21,7 +21,7 @@ export default function QrCard({ id, original_url, short_code, created_at, fgCol
       className="bg-white p-4 rounded-xl shadow hover:shadow-lg cursor-pointer"
       onClick={() => router.push(`/dashboard/qr/${id}`)}
     >
-      <QRCodeCanvas value={process.env.APP_HOSTNAME + "/qr/" + short_code} fgColor={fgColor} bgColor={bgColor} />
+      <QRCodeCanvas value={process.env.NEXT_PUBLIC_APP_HOSTNAME + "/qr/" + short_code} fgColor={fgColor} bgColor={bgColor} />
       <p className="mt-2 font-semibold break-all text-gray-800">{original_url}</p>
       <p className="text-sm text-gray-500">Shortcode: {short_code}</p>
       <p className="text-sm text-gray-500">
