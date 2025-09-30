@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
-import { QRCodeSVG } from "qrcode.react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 import QrDetail from "@/components/QrDetail"
 
@@ -18,6 +17,9 @@ interface QRCodeData {
   original_url: string
   short_code: string
   created_at: string
+  fg_color: string
+  bg_color: string
+  size: number
 }
 
 export default function Page({ params }: { params: { id: string } }) {
@@ -101,6 +103,9 @@ export default function Page({ params }: { params: { id: string } }) {
           original_url={qr?.original_url || ""}
           short_code={qr?.short_code || ""}
           created_at={qr?.created_at || ""}
+          fg_color={qr?.fg_color || "#000000"}
+          bg_color={qr?.bg_color || "#ffffff"}
+          size={qr?.size || 128}
         />
 
         <div className="bg-white p-6 rounded-xl shadow w-full md:w-2/3">

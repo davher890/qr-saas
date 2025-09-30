@@ -10,6 +10,9 @@ interface QRCodeData {
   original_url: string
   short_code: string
   created_at: string
+  fg_color: string
+  bg_color: string
+  size: number
 }
 
 export default function DashboardPage() {
@@ -126,6 +129,9 @@ export default function DashboardPage() {
               original_url={qr.original_url}
               short_code={qr.short_code}
               created_at={qr.created_at}
+              fgColor={qr.fg_color || "#000000"}
+              bgColor={qr.bg_color || "#ffffff"}
+              size={qr.size || 128}
             />
           ))}
         </div>
