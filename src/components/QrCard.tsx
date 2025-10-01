@@ -16,6 +16,7 @@ interface QrCardProps {
 export default function QrCard({ id, original_url, short_code, created_at, fgColor, bgColor, size }: QrCardProps) {
   const router = useRouter()
 
+  console.log(process.env.NEXT_PUBLIC_APP_HOSTNAME + "/qr/" + short_code)
   return (
     <div
       className="bg-white p-4 rounded-xl shadow hover:shadow-lg cursor-pointer"
