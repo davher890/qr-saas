@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## 🌍 Internationalization (i18n)
+
+This project supports **4 languages** out of the box:
+- 🇬🇧 English (en)
+- 🇪🇸 Spanish (es)
+- ~~🇫🇷 French (fr)~~
+- ~~🇩🇪 German (de)~~
+
+The app automatically detects the user's browser language and redirects accordingly!
+
 ## Getting Started
 
 First, run the development server:

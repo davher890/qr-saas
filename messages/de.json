@@ -1,0 +1,144 @@
+{
+    "common": {
+        "appName": "QR Code Hub",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "login": "Anmelden",
+        "signup": "Registrieren",
+        "getStarted": "Kostenlos starten",
+        "loading": "Wird geladen...",
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "delete": "Löschen",
+        "edit": "Bearbeiten",
+        "backToHome": "Zurück zur Startseite",
+        "username": "Benutzername"
+    },
+    "signup": {
+        "title": "Konto erstellen",
+        "usernamePlaceholder": "Benutzername",
+        "emailPlaceholder": "E-Mail",
+        "passwordPlaceholder": "Passwort",
+        "submitButton": "Registrieren",
+        "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+        "loginLink": "Anmelden"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "searchPlaceholder": "Nach URL suchen...",
+        "createNewQR": "Neuen QR erstellen",
+        "uploadFile": "Datei hochladen",
+        "noQRCodes": "Noch keine QR-Codes erstellt.",
+        "fileEmpty": "Die Datei ist leer",
+        "fileSuccess": "✅ {count} neue QR-Codes aus der Datei erstellt",
+        "logout": "Abmelden",
+        "myAccount": "Mein Konto"
+    },
+    "account": {
+        "title": "Mein Konto",
+        "emailLabel": "E-Mail",
+        "usernameLabel": "Benutzername",
+        "saveProfile": "Profil speichern",
+        "profileUpdated": "Profil aktualisiert!",
+        "newPasswordLabel": "Neues Passwort",
+        "updatePassword": "Passwort aktualisieren",
+        "passwordUpdated": "Passwort aktualisiert!"
+    },
+    "createQR": {
+        "title": "QR-Code erstellen"
+    },
+    "qrDetail": {
+        "shortcode": "Kurzcode",
+        "createdAt": "Erstellt am",
+        "foreground": "Vordergrund",
+        "background": "Hintergrund",
+        "sizeLabel": "Größe (px)",
+        "editUrlLabel": "Ziel-URL bearbeiten",
+        "urlPlaceholder": "https://beispiel.de",
+        "saving": "Wird gespeichert...",
+        "saveChanges": "Änderungen speichern",
+        "deleting": "Wird gelöscht...",
+        "deleteQR": "QR löschen",
+        "deleteConfirm": "Sind Sie sicher, dass Sie diesen QR-Code löschen möchten?",
+        "errorUpdating": "Fehler beim Aktualisieren des QR",
+        "successUpdated": "QR erfolgreich aktualisiert",
+        "errorInserting": "Fehler beim Einfügen des neuen QR",
+        "successInserted": "QR erfolgreich eingefügt",
+        "errorDeleting": "Fehler beim Löschen des QR",
+        "successDeleted": "QR erfolgreich gelöscht"
+    },
+    "qrCard": {
+        "shortcode": "Kurzcode",
+        "created": "Erstellt"
+    },
+    "qrDetailPage": {
+        "title": "QR-Code-Details",
+        "scanAnalytics": "Scan-Analytik",
+        "noScans": "Noch keine Scans.",
+        "recentScans": "Letzte Scans",
+        "backToDashboard": "Zurück zum Dashboard",
+        "qrNotFound": "QR-Code nicht gefunden"
+    },
+    "landing": {
+        "title": "QR Code Hub – Kostenloser QR-Code-Generator mit Analytik",
+        "description": "Erstellen, anpassen und verfolgen Sie QR-Codes kostenlos mit QR Code Hub. Unbegrenzte QR-Codes, vollständige Analytik, Personalisierung und einfaches Teilen — kein kostenpflichtiger Plan erforderlich.",
+        "hero": {
+            "title": "Erstellen, Personalisieren und Verfolgen Sie QR-Codes — Völlig Kostenlos",
+            "subtitle": "QR Code Hub ermöglicht es Ihnen, unbegrenzte QR-Codes mit vollständiger Analytik, individueller Personalisierung und einfachem Teilen zu generieren. Kein kostenpflichtiger Plan, keine Grenzen, 100% kostenlos."
+        },
+        "features": {
+            "title": "Warum QR Code Hub wählen?",
+            "unlimited": {
+                "title": "⚡ Unbegrenzte QR-Codes",
+                "description": "Erstellen Sie so viele QR-Codes, wie Sie benötigen — völlig kostenlos. Kein kostenpflichtiger Plan, keine Grenzen, nur unbegrenzte Nutzung."
+            },
+            "personalization": {
+                "title": "🎨 Personalisierung",
+                "description": "Passen Sie Ihre QR-Codes mit Farben und Größen an Ihre Marke oder Ihren persönlichen Stil an — alles kostenlos enthalten."
+            },
+            "analytics": {
+                "title": "📊 Vollständige Analytik",
+                "description": "Verfolgen Sie Scans nach Zeit, Standort und Gerät. Erhalten Sie Einblicke, um die Leistung zu messen, völlig kostenlos."
+            }
+        },
+        "whyFree": {
+            "title": "Warum QR Code Hub 100% Kostenlos ist",
+            "description": "QR Code Hub ist darauf ausgelegt, einfach, schnell und kostenlos zu sein. Jeder kann QR-Codes erstellen, personalisieren, verfolgen und herunterladen, ohne einen Cent zu zahlen.",
+            "features": [
+                "Unbegrenzte statische und dynamische QR-Codes",
+                "Vollständige Scan-Analytik mit Standort- und Geräteverfolgung",
+                "Personalisierungsoptionen für Farben und Größe",
+                "Schnelles Herunterladen oder Teilen von QR-Codes",
+                "Keine Registrierung für grundlegende Nutzung erforderlich"
+            ]
+        },
+        "faq": {
+            "title": "Häufig Gestellte Fragen",
+            "questions": [
+                {
+                    "question": "Ist QR Code Hub wirklich kostenlos?",
+                    "answer": "Ja! Jede Funktion ist derzeit kostenlos. Sie können unbegrenzte QR-Codes erstellen, Scans verfolgen und sie personalisieren, ohne etwas zu bezahlen."
+                },
+                {
+                    "question": "Muss ich ein Konto erstellen?",
+                    "answer": "Für die grundlegende Nutzung können Sie QR-Codes ohne Anmeldung generieren. Das Erstellen eines Kontos ermöglicht es Ihnen, Ihre QR-Codes zu verwalten und Analytiken an einem Ort zu sehen."
+                },
+                {
+                    "question": "Kann ich die QR-Codes anpassen?",
+                    "answer": "Ja! Sie können Farben und Größe für Ihre QR-Codes festlegen, um sie an Ihre Marke oder Designpräferenzen anzupassen — alles kostenlos enthalten."
+                },
+                {
+                    "question": "Kann ich QR-Code-Scans verfolgen?",
+                    "answer": "Absolut. Das Analytik-Dashboard zeigt Scans nach Zeit, Standort und Gerätetyp an, sodass Sie das Engagement ohne Kosten messen können."
+                },
+                {
+                    "question": "Laufen QR-Codes ab?",
+                    "answer": "Statische QR-Codes laufen nie ab. Dynamische QR-Codes bleiben aktiv, solange Sie das Tool verwenden — alles kostenlos."
+                }
+            ]
+        },
+        "footer": {
+            "copyright": "© {year} QR Code Hub. Alle Rechte vorbehalten."
+        }
+    }
+}

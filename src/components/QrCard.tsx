@@ -1,6 +1,7 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/routing"
+import { useTranslations } from 'next-intl'
 import { QRCodeCanvas } from "qrcode.react"
 
 interface QrCardProps {
@@ -13,8 +14,9 @@ interface QrCardProps {
   size: number
 }
 
-export default function QrCard({ id, original_url, short_code, created_at, fgColor, bgColor, size }: QrCardProps) {
+export default function QrCard({ id, original_url, short_code, created_at, fgColor, bgColor }: QrCardProps) {
   const router = useRouter()
+  const t = useTranslations()
 
   console.log(process.env.NEXT_PUBLIC_APP_HOSTNAME + "/qr/" + short_code)
   return (
@@ -24,9 +26,9 @@ export default function QrCard({ id, original_url, short_code, created_at, fgCol
     >
       <QRCodeCanvas value={process.env.NEXT_PUBLIC_APP_HOSTNAME + "/qr/" + short_code} fgColor={fgColor} bgColor={bgColor} />
       <p className="mt-2 font-semibold break-all text-gray-800">{original_url}</p>
-      <p className="text-sm text-gray-500">Shortcode: {short_code}</p>
+      <p className="text-sm text-gray-500">{t('qrCard.shortcode')}: {short_code}</p>
       <p className="text-sm text-gray-500">
-        Created: {new Date(created_at).toLocaleString()}
+        {t('qrCard.created')}: {new Date(created_at).toLocaleString()}
       </p>
     </div>
   )

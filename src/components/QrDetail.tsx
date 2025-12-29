@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { QRCodeCanvas } from "qrcode.react"
 import { supabase } from "@/lib/supabaseClient"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/routing"
+import { useTranslations } from 'next-intl'
 
 interface QrDetailProps {
   id: string
@@ -17,6 +18,7 @@ interface QrDetailProps {
 
 export default function QrDetail({ id, original_url, short_code, fg_color, bg_color, size, created_at }: QrDetailProps) {
   const router = useRouter()
+  const t = useTranslations()
 
   const [url, setUrl] = useState(original_url)
   const [saving, setSaving] = useState(false)
@@ -42,9 +44,9 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
       setSaving(false)
 
       if (error) {
-        alert("❌ Error updating QR: " + error.message)
+        alert("❌ " + t('qrDetail.errorUpdating') + ": " + error.message)
       } else {
-        alert("✅ QR updated successfully")
+        alert("✅ " + t('qrDetail.successUpdated'))
         router.refresh()
       }
     } else {
@@ -60,16 +62,16 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
       setSaving(false)
 
       if (error) {
-        alert("❌ Error inserting new QR: " + error.message)
+        alert("❌ " + t('qrDetail.errorInserting') + ": " + error.message)
       } else {
-        alert("✅ QR inserted successfully")
+        alert("✅ " + t('qrDetail.successInserted'))
         router.push("/dashboard")
       }
     }
   }
 
   const handleDelete = async () => {
-    if (!confirm("Are you sure you want to delete this QR code?")) return
+    if (!confirm(t('qrDetail.deleteConfirm'))) return
 
     setDeleting(true)
     const { error } = await supabase
@@ -80,15 +82,15 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
     setDeleting(false)
 
     if (error) {
-      alert("❌ Error deleting QR: " + error.message)
+      alert("❌ " + t('qrDetail.errorDeleting') + ": " + error.message)
     } else {
-      alert("✅ QR deleted successfully")
+      alert("✅ " + t('qrDetail.successDeleted'))
       router.push("/dashboard") // Go back to dashboard
     }
   }
 
   console.log(process.env.NEXT_PUBLIC_APP_HOSTNAME + "/qr/" + short_code)
-  
+
   return (
     <div className="bg-white p-6 rounded-xl shadow w-full md:w-1/3 text-center">
       <QRCodeCanvas
@@ -98,13 +100,13 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
         bgColor={bgColorState}
       />
       <p className="mt-4 font-semibold break-all text-gray-800">{url}</p>
-      <p className="text-sm text-gray-500">Shortcode: {short_code}</p>
-      <p className="text-sm text-gray-500">Created at: {new Date(created_at || "").toLocaleString()}</p>
+      <p className="text-sm text-gray-500">{t('qrDetail.shortcode')}: {short_code}</p>
+      <p className="text-sm text-gray-500">{t('qrDetail.createdAt')}: {new Date(created_at || "").toLocaleString()}</p>
 
       {/* Customization controls */}
       <div className="mt-6 flex flex-col gap-3 text-left">
         <div className="flex items-center justify-between">
-          <label htmlFor="fgColor" className="text-sm font-medium text-gray-800">Foreground</label>
+          <label htmlFor="fgColor" className="text-sm font-medium text-gray-800">{t('qrDetail.foreground')}</label>
           <input
             id="fgColor"
             type="color"
@@ -115,7 +117,7 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
         </div>
 
         <div className="flex items-center justify-between">
-          <label htmlFor="bgColor" className="text-sm font-medium text-gray-800">Background</label>
+          <label htmlFor="bgColor" className="text-sm font-medium text-gray-800">{t('qrDetail.background')}</label>
           <input
             id="bgColor"
             type="color"
@@ -126,7 +128,7 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
         </div>
 
         <div className="flex items-center justify-between">
-          <label htmlFor="size" className="text-sm font-medium text-gray-800">Size (px)</label>
+          <label htmlFor="size" className="text-sm font-medium text-gray-800">{t('qrDetail.sizeLabel')}</label>
           <input
             id="size"
             type="number"
@@ -142,13 +144,13 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
 
       {/* Edit URL form */}
       <div className="mt-6">
-        <label className="block text-sm font-medium mb-1 text-gray-800">Edit Destination URL</label>
+        <label className="block text-sm font-medium mb-1 text-gray-800">{t('qrDetail.editUrlLabel')}</label>
         <input
           type="url"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           className="w-full border rounded p-2 mb-4 text-gray-800"
-          placeholder="https://example.com"
+          placeholder={t('qrDetail.urlPlaceholder')}
         />
 
         {/* Button group */}
@@ -158,7 +160,7 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
             disabled={saving}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
           >
-            {saving ? "Saving..." : "Save Changes"}
+            {saving ? t('qrDetail.saving') : t('qrDetail.saveChanges')}
           </button>
 
           <button
@@ -166,7 +168,7 @@ export default function QrDetail({ id, original_url, short_code, fg_color, bg_co
             disabled={deleting}
             className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 disabled:opacity-50"
           >
-            {deleting ? "Deleting..." : "Delete QR"}
+            {deleting ? t('qrDetail.deleting') : t('qrDetail.deleteQR')}
           </button>
         </div>
       </div>
