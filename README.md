@@ -5,13 +5,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 This project supports **4 languages** out of the box:
 - 🇬🇧 English (en)
 - 🇪🇸 Spanish (es)
-- 🇫🇷 French (fr)
-- 🇩🇪 German (de)
-
-**Quick Links:**
-- 📖 [Full i18n Guide](./I18N_GUIDE.md) - Complete documentation
-- ⚡ [Quick Reference](./I18N_QUICKREF.md) - 5-step guide to add languages
-- 📝 [Setup Summary](./I18N_SETUP_SUMMARY.md) - What was configured
+- ~~🇫🇷 French (fr)~~
+- ~~🇩🇪 German (de)~~
 
 The app automatically detects the user's browser language and redirects accordingly!
 
