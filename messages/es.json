@@ -1,6 +1,6 @@
 {
     "common": {
-        "appName": "QRGen",
+        "appName": "QR Code Hub",
         "email": "Correo electrónico",
         "password": "Contraseña",
         "login": "Iniciar sesión",
@@ -48,7 +48,7 @@
         "title": "Crear un código QR"
     },
     "qrDetail": {
-        "shortcode": "Código corto",
+        "shortcode": "Código",
         "createdAt": "Creado el",
         "foreground": "Primer plano",
         "background": "Fondo",
@@ -68,7 +68,7 @@
         "successDeleted": "QR eliminado correctamente"
     },
     "qrCard": {
-        "shortcode": "Código corto",
+        "shortcode": "Código",
         "created": "Creado"
     },
     "qrDetailPage": {
@@ -80,14 +80,14 @@
         "qrNotFound": "Código QR no encontrado"
     },
     "landing": {
-        "title": "QRGen – Generador de Códigos QR Gratis con Analíticas",
-        "description": "Crea, personaliza y rastrea códigos QR gratis con QRGen. Códigos QR ilimitados, analíticas completas, personalización y compartir fácil — sin plan de pago requerido.",
+        "title": "QR Code Hub – Generador de Códigos QR Gratis con Analíticas",
+        "description": "Crea, personaliza y rastrea códigos QR gratis con QR Code Hub. Códigos QR ilimitados, analíticas completas, personalización y compartir fácil — sin plan de pago requerido.",
         "hero": {
             "title": "Crea, Personaliza y Rastrea Códigos QR — Totalmente Gratis",
-            "subtitle": "QRGen te permite generar códigos QR ilimitados con analíticas completas, personalización personalizada y compartir fácil. Sin plan de pago, sin límites, 100% gratis."
+            "subtitle": "QR Code Hub te permite generar códigos QR ilimitados con analíticas completas, personalización personalizada y compartir fácil. Sin plan de pago, sin límites, 100% gratis."
         },
         "features": {
-            "title": "¿Por qué elegir QRGen?",
+            "title": "¿Por qué elegir QR Code Hub?",
             "unlimited": {
                 "title": "⚡ Códigos QR Ilimitados",
                 "description": "Crea tantos códigos QR como necesites — totalmente gratis. Sin plan de pago, sin límites, solo uso ilimitado."
@@ -102,8 +102,8 @@
             }
         },
         "whyFree": {
-            "title": "Por qué QRGen es 100% Gratis",
-            "description": "QRGen está diseñado para ser simple, rápido y gratis. Todos pueden crear, personalizar, rastrear y descargar códigos QR sin pagar un centavo.",
+            "title": "Por qué QR Code Hub es 100% Gratis",
+            "description": "QR Code Hub está diseñado para ser simple, rápido y gratis. Todos pueden crear, personalizar, rastrear y descargar códigos QR sin pagar un centavo.",
             "features": [
                 "Códigos QR estáticos y dinámicos ilimitados",
                 "Analíticas de escaneo completas con seguimiento de ubicación y dispositivo",
@@ -116,7 +116,7 @@
             "title": "Preguntas Frecuentes",
             "questions": [
                 {
-                    "question": "¿Es QRGen realmente gratis?",
+                    "question": "¿Es QR Code Hub realmente gratis?",
                     "answer": "¡Sí! Todas las funciones son gratis por ahora. Puedes crear códigos QR ilimitados, rastrear escaneos y personalizarlos sin pagar nada."
                 },
                 {
@@ -138,7 +138,7 @@
             ]
         },
         "footer": {
-            "copyright": "© {year} QRGen. Todos los derechos reservados."
+            "copyright": "© {year} QR Code Hub. Todos los derechos reservados."
         }
     }
 }
