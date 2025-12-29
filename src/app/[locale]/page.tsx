@@ -39,6 +39,11 @@ export default function LandingPage() {
                             className="border rounded px-2 py-1"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleLogin()
+                                }
+                            }}
                         />
                         <label htmlFor="password" className="sr-only">{t('common.password')}</label>
                         <input
@@ -48,6 +53,11 @@ export default function LandingPage() {
                             className="border rounded px-2 py-1"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleLogin()
+                                }
+                            }}
                         />
                         <button
                             onClick={handleLogin}
