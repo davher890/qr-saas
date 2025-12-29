@@ -1,0 +1,144 @@
+{
+    "common": {
+        "appName": "QRGen",
+        "email": "Email",
+        "password": "Password",
+        "login": "Log In",
+        "signup": "Sign Up",
+        "getStarted": "Get Started Free",
+        "loading": "Loading...",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "backToHome": "Back to Home",
+        "username": "Username"
+    },
+    "signup": {
+        "title": "Create an Account",
+        "usernamePlaceholder": "User Name",
+        "emailPlaceholder": "Email",
+        "passwordPlaceholder": "Password",
+        "submitButton": "Sign Up",
+        "alreadyHaveAccount": "Already have an account?",
+        "loginLink": "Log In"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "searchPlaceholder": "Search by URL...",
+        "createNewQR": "Create New QR",
+        "uploadFile": "Upload File",
+        "noQRCodes": "No QR codes created yet.",
+        "fileEmpty": "File is empty",
+        "fileSuccess": "✅ Created {count} new QR codes from file",
+        "logout": "Log Out",
+        "myAccount": "My Account"
+    },
+    "account": {
+        "title": "My Account",
+        "emailLabel": "Email",
+        "usernameLabel": "Username",
+        "saveProfile": "Save Profile",
+        "profileUpdated": "Profile updated!",
+        "newPasswordLabel": "New Password",
+        "updatePassword": "Update Password",
+        "passwordUpdated": "Password updated!"
+    },
+    "createQR": {
+        "title": "Create a QR Code"
+    },
+    "qrDetail": {
+        "shortcode": "Shortcode",
+        "createdAt": "Created at",
+        "foreground": "Foreground",
+        "background": "Background",
+        "sizeLabel": "Size (px)",
+        "editUrlLabel": "Edit Destination URL",
+        "urlPlaceholder": "https://example.com",
+        "saving": "Saving...",
+        "saveChanges": "Save Changes",
+        "deleting": "Deleting...",
+        "deleteQR": "Delete QR",
+        "deleteConfirm": "Are you sure you want to delete this QR code?",
+        "errorUpdating": "Error updating QR",
+        "successUpdated": "QR updated successfully",
+        "errorInserting": "Error inserting new QR",
+        "successInserted": "QR inserted successfully",
+        "errorDeleting": "Error deleting QR",
+        "successDeleted": "QR deleted successfully"
+    },
+    "qrCard": {
+        "shortcode": "Shortcode",
+        "created": "Created"
+    },
+    "qrDetailPage": {
+        "title": "QR Code Details",
+        "scanAnalytics": "Scan Analytics",
+        "noScans": "No scans yet.",
+        "recentScans": "Recent Scans",
+        "backToDashboard": "Back to Dashboard",
+        "qrNotFound": "QR code not found"
+    },
+    "landing": {
+        "title": "QRGen – Free QR Code Generator with Analytics",
+        "description": "Create, customize, and track QR codes for free with QRGen. Unlimited QR codes, full analytics, personalization, and easy sharing — no paid plan required.",
+        "hero": {
+            "title": "Create, Personalize & Track QR Codes — Totally Free",
+            "subtitle": "QRGen lets you generate unlimited QR codes with full analytics, custom personalization, and easy sharing. No paid plan, no limits, 100% free."
+        },
+        "features": {
+            "title": "Why Choose QRGen?",
+            "unlimited": {
+                "title": "⚡ Unlimited QR Codes",
+                "description": "Create as many QR codes as you need — totally free. No paid plan, no limits, just unlimited usage."
+            },
+            "personalization": {
+                "title": "🎨 Personalization",
+                "description": "Customize your QR codes with colors and sizes to match your brand or personal style — all included for free."
+            },
+            "analytics": {
+                "title": "📊 Full Analytics",
+                "description": "Track scans by time, location, and device. Get insights to measure performance, completely free."
+            }
+        },
+        "whyFree": {
+            "title": "Why QRGen is 100% Free",
+            "description": "QRGen is designed to be simple, fast, and free. Everyone can create, personalize, track, and download QR codes without paying a cent.",
+            "features": [
+                "Unlimited static and dynamic QR codes",
+                "Full scan analytics with location & device tracking",
+                "Personalization options for colors and size",
+                "Quick download or sharing of QR codes",
+                "No registration required for basic usage"
+            ]
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "questions": [
+                {
+                    "question": "Is QRGen really free?",
+                    "answer": "Yes! Every feature is free for now. You can create unlimited QR codes, track scans, and personalize them without paying anything."
+                },
+                {
+                    "question": "Do I need to create an account?",
+                    "answer": "For basic usage, you can generate QR codes without signing up. Creating an account allows you to manage your QR codes and see analytics in one place."
+                },
+                {
+                    "question": "Can I customize the QR codes?",
+                    "answer": "Yes! You can set colors and size for your QR codes to match your brand or design preferences — all included for free."
+                },
+                {
+                    "question": "Can I track QR code scans?",
+                    "answer": "Absolutely. The analytics dashboard shows scans by time, location, and device type, so you can measure engagement without any cost."
+                },
+                {
+                    "question": "Do QR codes expire?",
+                    "answer": "Static QR codes never expire. Dynamic QR codes remain active as long as you use the tool — all free."
+                }
+            ]
+        },
+        "footer": {
+            "copyright": "© {year} QRGen. All rights reserved."
+        }
+    }
+}

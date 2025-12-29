@@ -1,0 +1,144 @@
+{
+    "common": {
+        "appName": "QRGen",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "login": "Se connecter",
+        "signup": "S'inscrire",
+        "getStarted": "Commencer gratuitement",
+        "loading": "Chargement...",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "delete": "Supprimer",
+        "edit": "Modifier",
+        "backToHome": "Retour à l'accueil",
+        "username": "Nom d'utilisateur"
+    },
+    "signup": {
+        "title": "Créer un compte",
+        "usernamePlaceholder": "Nom d'utilisateur",
+        "emailPlaceholder": "E-mail",
+        "passwordPlaceholder": "Mot de passe",
+        "submitButton": "S'inscrire",
+        "alreadyHaveAccount": "Vous avez déjà un compte?",
+        "loginLink": "Se connecter"
+    },
+    "dashboard": {
+        "title": "Tableau de bord",
+        "searchPlaceholder": "Rechercher par URL...",
+        "createNewQR": "Créer un nouveau QR",
+        "uploadFile": "Télécharger un fichier",
+        "noQRCodes": "Aucun code QR créé pour le moment.",
+        "fileEmpty": "Le fichier est vide",
+        "fileSuccess": "✅ {count} nouveaux codes QR créés à partir du fichier",
+        "logout": "Se déconnecter",
+        "myAccount": "Mon compte"
+    },
+    "account": {
+        "title": "Mon compte",
+        "emailLabel": "E-mail",
+        "usernameLabel": "Nom d'utilisateur",
+        "saveProfile": "Enregistrer le profil",
+        "profileUpdated": "Profil mis à jour!",
+        "newPasswordLabel": "Nouveau mot de passe",
+        "updatePassword": "Mettre à jour le mot de passe",
+        "passwordUpdated": "Mot de passe mis à jour!"
+    },
+    "createQR": {
+        "title": "Créer un code QR"
+    },
+    "qrDetail": {
+        "shortcode": "Code court",
+        "createdAt": "Créé le",
+        "foreground": "Premier plan",
+        "background": "Arrière-plan",
+        "sizeLabel": "Taille (px)",
+        "editUrlLabel": "Modifier l'URL de destination",
+        "urlPlaceholder": "https://exemple.com",
+        "saving": "Enregistrement...",
+        "saveChanges": "Enregistrer les modifications",
+        "deleting": "Suppression...",
+        "deleteQR": "Supprimer le QR",
+        "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce code QR?",
+        "errorUpdating": "Erreur lors de la mise à jour du QR",
+        "successUpdated": "QR mis à jour avec succès",
+        "errorInserting": "Erreur lors de l'insertion du nouveau QR",
+        "successInserted": "QR inséré avec succès",
+        "errorDeleting": "Erreur lors de la suppression du QR",
+        "successDeleted": "QR supprimé avec succès"
+    },
+    "qrCard": {
+        "shortcode": "Code court",
+        "created": "Créé"
+    },
+    "qrDetailPage": {
+        "title": "Détails du code QR",
+        "scanAnalytics": "Analyses des scans",
+        "noScans": "Aucun scan pour le moment.",
+        "recentScans": "Scans récents",
+        "backToDashboard": "Retour au tableau de bord",
+        "qrNotFound": "Code QR introuvable"
+    },
+    "landing": {
+        "title": "QRGen – Générateur de Codes QR Gratuit avec Analytiques",
+        "description": "Créez, personnalisez et suivez des codes QR gratuitement avec QRGen. Codes QR illimités, analytiques complètes, personnalisation et partage facile — aucun plan payant requis.",
+        "hero": {
+            "title": "Créer, Personnaliser et Suivre des Codes QR — Totalement Gratuit",
+            "subtitle": "QRGen vous permet de générer des codes QR illimités avec des analytiques complètes, une personnalisation personnalisée et un partage facile. Pas de plan payant, pas de limites, 100% gratuit."
+        },
+        "features": {
+            "title": "Pourquoi choisir QRGen?",
+            "unlimited": {
+                "title": "⚡ Codes QR Illimités",
+                "description": "Créez autant de codes QR que vous en avez besoin — totalement gratuit. Pas de plan payant, pas de limites, juste une utilisation illimitée."
+            },
+            "personalization": {
+                "title": "🎨 Personnalisation",
+                "description": "Personnalisez vos codes QR avec des couleurs et des tailles pour correspondre à votre marque ou style personnel — tout inclus gratuitement."
+            },
+            "analytics": {
+                "title": "📊 Analytiques Complètes",
+                "description": "Suivez les scans par temps, emplacement et appareil. Obtenez des informations pour mesurer les performances, complètement gratuit."
+            }
+        },
+        "whyFree": {
+            "title": "Pourquoi QRGen est 100% Gratuit",
+            "description": "QRGen est conçu pour être simple, rapide et gratuit. Tout le monde peut créer, personnaliser, suivre et télécharger des codes QR sans payer un centime.",
+            "features": [
+                "Codes QR statiques et dynamiques illimités",
+                "Analytiques de scan complètes avec suivi de l'emplacement et de l'appareil",
+                "Options de personnalisation des couleurs et de la taille",
+                "Téléchargement ou partage rapide de codes QR",
+                "Aucune inscription requise pour une utilisation de base"
+            ]
+        },
+        "faq": {
+            "title": "Questions Fréquemment Posées",
+            "questions": [
+                {
+                    "question": "QRGen est-il vraiment gratuit?",
+                    "answer": "Oui! Toutes les fonctionnalités sont gratuites pour le moment. Vous pouvez créer des codes QR illimités, suivre les scans et les personnaliser sans rien payer."
+                },
+                {
+                    "question": "Dois-je créer un compte?",
+                    "answer": "Pour une utilisation de base, vous pouvez générer des codes QR sans vous inscrire. La création d'un compte vous permet de gérer vos codes QR et de voir les analytiques en un seul endroit."
+                },
+                {
+                    "question": "Puis-je personnaliser les codes QR?",
+                    "answer": "Oui! Vous pouvez définir des couleurs et une taille pour vos codes QR pour correspondre à votre marque ou préférences de conception — tout inclus gratuitement."
+                },
+                {
+                    "question": "Puis-je suivre les scans de codes QR?",
+                    "answer": "Absolument. Le tableau de bord analytique affiche les scans par temps, emplacement et type d'appareil, afin que vous puissiez mesurer l'engagement sans aucun coût."
+                },
+                {
+                    "question": "Les codes QR expirent-ils?",
+                    "answer": "Les codes QR statiques n'expirent jamais. Les codes QR dynamiques restent actifs tant que vous utilisez l'outil — tout gratuit."
+                }
+            ]
+        },
+        "footer": {
+            "copyright": "© {year} QRGen. Tous droits réservés."
+        }
+    }
+}
