@@ -20,17 +20,7 @@ export default function AccountPage() {
             if (!user) return
 
             setEmail(user.email || "")
-
-            // Get profile from users table
-            const { data: profile } = await supabase
-                .from("users")
-                .select("display_name")
-                .eq("auth_id", user.id)
-                .single()
-
-            if (profile) {
-                setUsername(profile.display_name || "")
-            }
+            setUsername(user.user_metadata.display_name || "")
 
             setLoading(false)
         }
@@ -42,10 +32,17 @@ export default function AccountPage() {
         const { data: { user } } = await supabase.auth.getUser()
         if (!user) return
 
-        const { error } = await supabase
-            .from("users")
-            .update({ display_name: username })
-            .eq("auth_id", user.id)
+        // const { error } = await supabase
+        //     .from("users")
+        //     .update({ display_name: username })
+        //     .eq("auth_id", user.id)
+
+        const { data, error } = await supabase.auth.updateUser({
+            data: {
+                display_name: username
+            }
+        })
+
 
         if (error) alert(error.message)
         else alert(t('account.profileUpdated'))
