@@ -17,7 +17,11 @@ export default function AccountPage() {
 
             // Get current user
             const { data: { user } } = await supabase.auth.getUser()
-            if (!user) return
+            if (!user) {
+                alert(t('signup.userNotFound'))
+                setLoading(false)
+                return
+            }
 
             setEmail(user.email || "")
             setUsername(user.user_metadata.display_name || "")
@@ -29,34 +33,43 @@ export default function AccountPage() {
     }, [])
 
     const updateProfile = async () => {
+        setLoading(true)
         const { data: { user } } = await supabase.auth.getUser()
-        if (!user) return
-
-        // const { error } = await supabase
-        //     .from("users")
-        //     .update({ display_name: username })
-        //     .eq("auth_id", user.id)
-
+        if (!user) {
+            alert(t('signup.userNotFound'))
+            setLoading(false)
+            return
+        }
         const { data, error } = await supabase.auth.updateUser({
             data: {
                 display_name: username
             }
         })
-
-
-        if (error) alert(error.message)
-        else alert(t('account.profileUpdated'))
+        if (error) {
+            alert(error.message)
+            setLoading(false)
+            return
+        }
+        else {
+            alert(t('account.profileUpdated'))
+            setLoading(false)
+        }
     }
 
     const changePassword = async () => {
+        setLoading(true)
         const { error } = await supabase.auth.updateUser({
             password: newPassword,
         })
 
-        if (error) alert(error.message)
+        if (error) {
+            alert(error.message)
+            setLoading(false)
+        }
         else {
             alert(t('account.passwordUpdated'))
             setNewPassword("")
+            setLoading(false)
         }
     }
 

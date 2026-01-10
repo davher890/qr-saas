@@ -69,7 +69,8 @@
     },
     "qrCard": {
         "shortcode": "Kurzcode",
-        "created": "Erstellt"
+        "created": "Erstellt",
+        "download": "Herunterladen"
     },
     "qrDetailPage": {
         "title": "QR-Code-Details",

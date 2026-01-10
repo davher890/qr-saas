@@ -26,12 +26,29 @@ export default function SignupPage() {
     }
 
     // Optional: create user metadata in `users` table
-    if (data.user) {
-      await supabase.from("users").insert({
-        auth_id: data.user.id,
-        email,
-        username: username,
+    if (data.user && username !== "") {
+      // await supabase.from("users").insert({
+      //   auth_id: data.user.id,
+      //   email,
+      //   username: username,
+      //   data: {
+      //     display_name: username
+      //   }
+      // })
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) {
+          alert(t('signup.userNotFound'))
+          return
+      }
+      const { data, error } = await supabase.auth.updateUser({
+        data: {
+            display_name: username
+        }
       })
+      if (error) {
+        alert(error.message)
+        return
+      }
     }
 
     router.push("/dashboard")
@@ -82,6 +99,11 @@ export default function SignupPage() {
             className="w-full border p-2 mb-6 rounded"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSignup()
+              }
+            }}
           />
 
           <button

@@ -21,7 +21,8 @@
         "passwordPlaceholder": "Contraseña",
         "submitButton": "Registrarse",
         "alreadyHaveAccount": "¿Ya tienes una cuenta?",
-        "loginLink": "Iniciar sesión"
+        "loginLink": "Iniciar sesión",
+        "userNotFound": "Usuario no encontrado"
     },
     "dashboard": {
         "title": "Panel de control",
@@ -69,7 +70,8 @@
     },
     "qrCard": {
         "shortcode": "Código",
-        "created": "Creado"
+        "created": "Creado",
+        "download": "Descargar"
     },
     "qrDetailPage": {
         "title": "Detalles del código QR",

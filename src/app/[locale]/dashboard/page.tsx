@@ -28,7 +28,8 @@ export default function DashboardPage() {
         const fetchQRCodes = async () => {
             setLoading(true)
             // Get current user
-            const { data: { user } } = await supabase.auth.getUser()
+            const { data: { user }, error: userError } = await supabase.auth.getUser()
+            console.log(error)
             if (!user) return
             // Fetch QR codes for the current user
             const { data, error } = await supabase

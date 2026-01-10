@@ -21,7 +21,8 @@
         "passwordPlaceholder": "Password",
         "submitButton": "Sign Up",
         "alreadyHaveAccount": "Already have an account?",
-        "loginLink": "Log In"
+        "loginLink": "Log In",
+        "userNotFound": "User not found"
     },
     "dashboard": {
         "title": "Dashboard",
@@ -69,7 +70,8 @@
     },
     "qrCard": {
         "shortcode": "Shortcode",
-        "created": "Created"
+        "created": "Created",
+        "download": "Download"
     },
     "qrDetailPage": {
         "title": "QR Code Details",
