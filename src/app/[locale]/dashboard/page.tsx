@@ -29,8 +29,11 @@ export default function DashboardPage() {
             setLoading(true)
             // Get current user
             const { data: { user }, error: userError } = await supabase.auth.getUser()
-            console.log(error)
-            if (!user) return
+            if (!user) {
+                alert(userError?.message)
+                setLoading(false)
+                return
+            }
             // Fetch QR codes for the current user
             const { data, error } = await supabase
                 .from("qr_codes")
@@ -39,12 +42,15 @@ export default function DashboardPage() {
                 .order("created_at", { ascending: false })
 
             if (error) {
-                console.error(error)
+                alert(error.message)
+                setLoading(false)
+                return
             } else {
                 setQrCodes(data || [])
                 setFilteredQrCodes(data || [])
+                setLoading(false)
+                return
             }
-            setLoading(false)
         }
 
         fetchQRCodes()
