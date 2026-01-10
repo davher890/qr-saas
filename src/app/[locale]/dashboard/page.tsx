@@ -27,9 +27,14 @@ export default function DashboardPage() {
     useEffect(() => {
         const fetchQRCodes = async () => {
             setLoading(true)
+            // Get current user
+            const { data: { user } } = await supabase.auth.getUser()
+            if (!user) return
+            // Fetch QR codes for the current user
             const { data, error } = await supabase
                 .from("qr_codes")
                 .select("*")
+                .eq("user_id", user?.id)
                 .order("created_at", { ascending: false })
 
             if (error) {
