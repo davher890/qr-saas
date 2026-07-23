@@ -32,7 +32,17 @@
         "fileEmpty": "Die Datei ist leer",
         "fileSuccess": "✅ {count} neue QR-Codes aus der Datei erstellt",
         "logout": "Abmelden",
-        "myAccount": "Mein Konto"
+        "myAccount": "Mein Konto",
+        "admin": "Admin"
+    },
+    "admin": {
+        "title": "Alle Benutzer",
+        "email": "E-Mail",
+        "userId": "Benutzer-ID",
+        "totalUsers": "{count} Benutzer insgesamt",
+        "accessDenied": "Sie haben keine Berechtigung, diese Seite anzuzeigen.",
+        "notSignedIn": "Bitte melden Sie sich an, um fortzufahren.",
+        "errorLoading": "Benutzer konnten nicht geladen werden."
     },
     "account": {
         "title": "Mein Konto",

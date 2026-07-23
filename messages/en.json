@@ -33,7 +33,17 @@
         "fileEmpty": "File is empty",
         "fileSuccess": "✅ Created {count} new QR codes from file",
         "logout": "Log Out",
-        "myAccount": "My Account"
+        "myAccount": "My Account",
+        "admin": "Admin"
+    },
+    "admin": {
+        "title": "All Users",
+        "email": "Email",
+        "userId": "User ID",
+        "totalUsers": "{count} user(s) total",
+        "accessDenied": "You don't have permission to view this page.",
+        "notSignedIn": "Please sign in to continue.",
+        "errorLoading": "Failed to load users."
     },
     "account": {
         "title": "My Account",

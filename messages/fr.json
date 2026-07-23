@@ -32,7 +32,17 @@
         "fileEmpty": "Le fichier est vide",
         "fileSuccess": "✅ {count} nouveaux codes QR créés à partir du fichier",
         "logout": "Se déconnecter",
-        "myAccount": "Mon compte"
+        "myAccount": "Mon compte",
+        "admin": "Admin"
+    },
+    "admin": {
+        "title": "Tous les utilisateurs",
+        "email": "E-mail",
+        "userId": "ID utilisateur",
+        "totalUsers": "{count} utilisateur(s) au total",
+        "accessDenied": "Vous n'avez pas la permission de voir cette page.",
+        "notSignedIn": "Veuillez vous connecter pour continuer.",
+        "errorLoading": "Échec du chargement des utilisateurs."
     },
     "account": {
         "title": "Mon compte",

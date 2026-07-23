@@ -4,17 +4,8 @@ import { useEffect, useState } from "react"
 import { useRouter } from "@/i18n/routing"
 import { useTranslations } from 'next-intl'
 import { supabase } from "@/lib/supabaseClient"
-import QrCard from "@/components/QrCard"
-
-interface QRCodeData {
-    id: string
-    original_url: string
-    short_code: string
-    created_at: string
-    fg_color: string
-    bg_color: string
-    size: number
-}
+import { QRCodeData } from "@/app/interfaces/interfaces"
+import QrGrid from "@/components/QrGrid"
 
 export default function DashboardPage() {
     const router = useRouter()
@@ -132,24 +123,7 @@ export default function DashboardPage() {
                 </label>
             </div>
 
-            {filteredQrCodes.length === 0 ? (
-                <p>{t('dashboard.noQRCodes')}</p>
-            ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {filteredQrCodes.map((qr) => (
-                        <QrCard
-                            key={qr.id}
-                            id={qr.id}
-                            original_url={qr.original_url}
-                            short_code={qr.short_code}
-                            created_at={qr.created_at}
-                            fgColor={qr.fg_color || "#000000"}
-                            bgColor={qr.bg_color || "#ffffff"}
-                            size={qr.size || 128}
-                        />
-                    ))}
-                </div>
-            )}
+            <QrGrid qrCodes={filteredQrCodes as unknown as QRCodeData[]} />
         </>
     )
 }

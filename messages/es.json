@@ -33,7 +33,17 @@
         "fileEmpty": "El archivo está vacío",
         "fileSuccess": "✅ Se crearon {count} códigos QR nuevos desde el archivo",
         "logout": "Cerrar sesión",
-        "myAccount": "Mi cuenta"
+        "myAccount": "Mi cuenta",
+        "admin": "Admin"
+    },
+    "admin": {
+        "title": "Todos los usuarios",
+        "email": "Correo electrónico",
+        "userId": "ID de usuario",
+        "totalUsers": "{count} usuario(s) en total",
+        "accessDenied": "No tienes permiso para ver esta página.",
+        "notSignedIn": "Inicia sesión para continuar.",
+        "errorLoading": "Error al cargar los usuarios."
     },
     "account": {
         "title": "Mi cuenta",

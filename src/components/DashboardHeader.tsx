@@ -23,6 +23,12 @@ export default function DashboardHeader() {
             <div className="flex gap-4 items-center">
                 <LanguageSwitcher />
                 <button
+                    className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700"
+                    onClick={() => router.push("/dashboard/admin")}
+                >
+                    {t('dashboard.admin')}
+                </button>
+                <button
                     className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
                     onClick={() => router.push("/dashboard/account")}
                 >
