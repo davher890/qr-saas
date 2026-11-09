@@ -89,7 +89,10 @@ export default function AdminUserQrCodesPage({
       <p className="mb-4 text-gray-600 dark:text-gray-400">
         {t("admin.totalQrCodes", { count: qrCodes.length })}
       </p>
-      <QrGrid qrCodes={qrCodes} linkToDetail={false} />
+      <QrGrid
+        qrCodes={qrCodes}
+        getDetailHref={(qrId) => `/dashboard/admin/users/${userId}/qr/${qrId}`}
+      />
     </div>
   )
 }

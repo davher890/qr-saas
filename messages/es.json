@@ -48,7 +48,9 @@
         "totalQrCodes": "{count} código(s) QR en total",
         "backToUsers": "Volver a usuarios",
         "userNotFound": "Usuario no encontrado.",
-        "errorLoadingQrCodes": "Error al cargar los códigos QR."
+        "errorLoadingQrCodes": "Error al cargar los códigos QR.",
+        "backToUserQrCodes": "Volver a los QR del usuario",
+        "totalScans": "{count} escaneo(s) en total"
     },
     "account": {
         "title": "Mi cuenta",
