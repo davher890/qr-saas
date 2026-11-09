@@ -42,7 +42,12 @@
         "totalUsers": "{count} utilisateur(s) au total",
         "accessDenied": "Vous n'avez pas la permission de voir cette page.",
         "notSignedIn": "Veuillez vous connecter pour continuer.",
-        "errorLoading": "Échec du chargement des utilisateurs."
+        "errorLoading": "Échec du chargement des utilisateurs.",
+        "userQrCodesTitle": "QR codes de {name}",
+        "totalQrCodes": "{count} QR code(s) au total",
+        "backToUsers": "Retour aux utilisateurs",
+        "userNotFound": "Utilisateur introuvable.",
+        "errorLoadingQrCodes": "Échec du chargement des QR codes."
     },
     "account": {
         "title": "Mon compte",

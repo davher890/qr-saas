@@ -13,9 +13,10 @@ interface QrCardProps {
   fgColor: string
   bgColor: string
   size: number
+  linkToDetail?: boolean
 }
 
-export default function QrCard({ id, original_url, short_code, created_at, fgColor, bgColor }: QrCardProps) {
+export default function QrCard({ id, original_url, short_code, created_at, fgColor, bgColor, linkToDetail = true }: QrCardProps) {
   const router = useRouter()
   const t = useTranslations()
   const qrRef = useRef<HTMLCanvasElement>(null)
@@ -37,8 +38,8 @@ export default function QrCard({ id, original_url, short_code, created_at, fgCol
 
   return (
     <div
-      className="bg-white p-4 rounded-xl shadow hover:shadow-lg cursor-pointer"
-      onClick={() => router.push(`/dashboard/qr/${id}`)}
+      className={`bg-white p-4 rounded-xl shadow ${linkToDetail ? "hover:shadow-lg cursor-pointer" : ""}`}
+      onClick={linkToDetail ? () => router.push(`/dashboard/qr/${id}`) : undefined}
     >
       <QRCodeCanvas
         ref={qrRef}

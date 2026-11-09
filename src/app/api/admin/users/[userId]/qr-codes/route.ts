@@ -36,6 +36,16 @@ export async function GET(
     return NextResponse.json({ error: 'User ID required' }, { status: 400 })
   }
 
+  const { data: userData, error: targetUserError } = await admin.auth.admin.getUserById(userId)
+  if (targetUserError || !userData?.user) {
+    return NextResponse.json({ error: 'User not found' }, { status: 404 })
+  }
+  const targetUser = {
+    id: userData.user.id,
+    email: userData.user.email ?? '',
+    username: (userData.user.user_metadata as { display_name?: string })?.display_name ?? '',
+  }
+
   const { data: qrCodes, error: qrError } = await admin
     .from('qr_codes')
     .select('*')
@@ -46,5 +56,5 @@ export async function GET(
     return NextResponse.json({ error: qrError.message }, { status: 500 })
   }
 
-  return NextResponse.json({ qrCodes: qrCodes ?? [] })
+  return NextResponse.json({ user: targetUser, qrCodes: qrCodes ?? [] })
 }
