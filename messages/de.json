@@ -42,7 +42,14 @@
         "totalUsers": "{count} Benutzer insgesamt",
         "accessDenied": "Sie haben keine Berechtigung, diese Seite anzuzeigen.",
         "notSignedIn": "Bitte melden Sie sich an, um fortzufahren.",
-        "errorLoading": "Benutzer konnten nicht geladen werden."
+        "errorLoading": "Benutzer konnten nicht geladen werden.",
+        "userQrCodesTitle": "QR-Codes von {name}",
+        "totalQrCodes": "{count} QR-Code(s) insgesamt",
+        "backToUsers": "Zurück zu den Benutzern",
+        "userNotFound": "Benutzer nicht gefunden.",
+        "errorLoadingQrCodes": "QR-Codes konnten nicht geladen werden.",
+        "backToUserQrCodes": "Zurück zu den QR-Codes des Benutzers",
+        "totalScans": "{count} Scan(s) insgesamt"
     },
     "account": {
         "title": "Mein Konto",

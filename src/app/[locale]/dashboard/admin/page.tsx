@@ -69,7 +69,7 @@ export default function AdminUsersPage() {
       <h1 className="text-2xl font-bold mb-6">{t("admin.title")}</h1>
       <div className="border rounded overflow-hidden">
         <table className="w-full text-left">
-          <thead className="bg-gray-100 border-b">
+          <thead className="bg-gray-100 text-gray-900 border-b dark:bg-gray-800 dark:text-gray-100">
             <tr>
               <th className="p-3 font-semibold">{t("admin.email")}</th>
               <th className="p-3 font-semibold">{t("common.username")}</th>
@@ -78,10 +78,14 @@ export default function AdminUsersPage() {
           </thead>
           <tbody>
             {users.map((u) => (
-              <tr key={u.id} className="border-b last:border-b-0 hover:bg-gray-50">
+              <tr
+                key={u.id}
+                className="border-b last:border-b-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/60"
+                onClick={() => router.push(`/dashboard/admin/users/${u.id}`)}
+              >
                 <td className="p-3">{u.email || "—"}</td>
                 <td className="p-3">{u.username || "—"}</td>
-                <td className="p-3 font-mono text-sm text-gray-600">{u.id}</td>
+                <td className="p-3 font-mono text-sm text-gray-600 dark:text-gray-400">{u.id}</td>
               </tr>
             ))}
           </tbody>

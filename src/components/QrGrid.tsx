@@ -2,7 +2,7 @@ import { QRCodeData } from "@/app/interfaces/interfaces"
 import QrCard from "./QrCard"
 import { useTranslations } from 'next-intl'
 
-export default function QrGrid({ qrCodes }: { qrCodes: QRCodeData[] }) {
+export default function QrGrid({ qrCodes, getDetailHref }: { qrCodes: QRCodeData[], getDetailHref?: (id: string) => string }) {
     const t = useTranslations()
     return (
         <div>
@@ -20,6 +20,7 @@ export default function QrGrid({ qrCodes }: { qrCodes: QRCodeData[] }) {
                             fgColor={qr.fg_color || "#000000"}
                             bgColor={qr.bg_color || "#ffffff"}
                             size={qr.size || 128}
+                            detailHref={getDetailHref?.(qr.id)}
                         />
                     ))}
                 </div>

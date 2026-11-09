@@ -43,7 +43,14 @@
         "totalUsers": "{count} user(s) total",
         "accessDenied": "You don't have permission to view this page.",
         "notSignedIn": "Please sign in to continue.",
-        "errorLoading": "Failed to load users."
+        "errorLoading": "Failed to load users.",
+        "userQrCodesTitle": "QR codes of {name}",
+        "totalQrCodes": "{count} QR code(s) total",
+        "backToUsers": "Back to users",
+        "userNotFound": "User not found.",
+        "errorLoadingQrCodes": "Failed to load QR codes.",
+        "backToUserQrCodes": "Back to user's QR codes",
+        "totalScans": "{count} scan(s) total"
     },
     "account": {
         "title": "My Account",
